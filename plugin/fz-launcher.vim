@@ -1,6 +1,7 @@
 let s:config_file = get(g:, 'fz_launcher_file', '~/.fz-launcher')
 
 function! s:fz_callback(list, ctx)
+  redraw!
   for l:item in a:ctx.items
     for l:found in filter(copy(a:list), 'v:val[0] ==# l:item')
       let l:cmd = l:found[1]
