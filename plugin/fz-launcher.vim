@@ -1,6 +1,7 @@
 let s:config_file = get(g:, 'fz_launcher_file', '~/.fz-launcher')
 
-function! s:fz_start(list, ctx, timer) abort
+function! s:fz_callback(list, ctx) abort
+  redraw!
   for l:item in a:ctx.items
     for l:found in filter(copy(a:list), 'v:val[0] ==# l:item')
       let l:cmd = l:found[1]
@@ -11,11 +12,6 @@ function! s:fz_start(list, ctx, timer) abort
       endif
     endfor
   endfor
-endfunction
-
-function! s:fz_callback(list, ctx) abort
-  redraw!
-  call timer_start(0, function('s:fz_start', [a:list, a:ctx]))
 endfunction
 
 function! s:fz_launcher() abort
