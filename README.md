@@ -13,7 +13,7 @@ See `:help fz-launcher`
 For [vim-plug](https://github.com/junegunn/vim-plug) plugin manager:
 
 ```
-Plug 'vim-fz-launcher'
+Plug 'mattn/vim-fz-launcher'
 ```
 
 ## License
